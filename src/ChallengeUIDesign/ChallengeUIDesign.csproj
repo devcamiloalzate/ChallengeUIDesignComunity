@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BackupViews\AboutPage.xaml.cs" />
+    <Compile Remove="BackupViews\ClockPage.xaml.cs" />
+    <Compile Remove="BackupViews\FinancePage.xaml.cs" />
+    <Compile Remove="BackupViews\SKClockPage.xaml.cs" />
+    <Compile Remove="BackupViews\SushiPage.xaml.cs" />
+    <Compile Remove="BackupViews\TransactionPage.xaml.cs" />
+    <Compile Remove="BackupViews\WeatherPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="BackupViews\AboutPage.xaml" />
+    <EmbeddedResource Remove="BackupViews\ClockPage.xaml" />
+    <EmbeddedResource Remove="BackupViews\FinancePage.xaml" />
+    <EmbeddedResource Remove="BackupViews\SKClockPage.xaml" />
+    <EmbeddedResource Remove="BackupViews\SushiPage.xaml" />
+    <EmbeddedResource Remove="BackupViews\TransactionPage.xaml" />
+    <EmbeddedResource Remove="BackupViews\WeatherPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\BG1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\BG1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
+    <PackageReference Include="SkiaSharp.Views" Version="2.80.2" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\WeatherPage.xaml.cs">
+      <DependentUpon>WeatherPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ClockPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FinancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Fishing\OnboardingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WeatherPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SKClockPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SushiPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TransactionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BackupViews\" />
+  </ItemGroup>
+</Project>

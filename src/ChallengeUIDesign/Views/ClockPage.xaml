@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local1="clr-namespace:ChallengeUIDesign.Helpers" 
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="ChallengeUIDesign.Views.ClockPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#fbfbfb" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Spacing="0" VerticalOptions="FillAndExpand">
+                <Image Source="user" WidthRequest="30" VerticalOptions="EndAndExpand" Margin="0,0,20,0" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Spacing="7" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Benin" TextColor="Black" 
+                           FontSize="16"
+                           FontAttributes="Bold" />
+                    <Label Text="Nigeria" FontSize="16" TextColor="Gray" />
+                </StackLayout>
+                <Label Text="Wed, 26 Dec 2020" FontSize="14" 
+                       CharacterSpacing="-1"
+                       HorizontalTextAlignment="Center" TextColor="Gray" />
+                <StackLayout Margin="0,20,0,30">
+                    <cake:PancakeView BackgroundColor="#1f1f1f" CornerRadius="100" 
+                                      HasShadow="True"
+                                      HorizontalOptions="Center" VerticalOptions="Center"                                      
+                                      Padding="0"
+                                      WidthRequest="160" HeightRequest="160">
+                        <cake:PancakeView.Shadow>
+                            <cake:DropShadow Color="#000000" Offset="10,10" />
+                        </cake:PancakeView.Shadow>
+                        
+                        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <!-- Indicadores de hora -->
+                            <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5,0,2,4"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5,1,2,4"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,0.5,4,2"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="1,0.5,4,2"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                            <!-- Manillas -->
+                            <BoxView x:Name="secondHand" BackgroundColor="Red" AbsoluteLayout.LayoutBounds="0.5,0.1,2,80" Rotation="0" AnchorY="0.9"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            <BoxView x:Name="minuteHand" BackgroundColor="Gray" AbsoluteLayout.LayoutBounds="0.5,0.19,2,70" Rotation="0" AnchorY="0.9"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                            <BoxView x:Name="hourHand" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5,0.29,1,55" Rotation="270" AnchorY="0.9"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+                        </AbsoluteLayout>
+                    </cake:PancakeView>
+                </StackLayout>
+            </StackLayout>
+
+            <ListView Grid.Row="2" HasUnevenRows="True" SelectionMode="None"                      
+                      SeparatorVisibility="None" x:Name="ListViewCustom">
+                <!--<ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>monodroid</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="White" Margin="20,0,20,8" Padding="0,20" CornerRadius="25">
+                                <Grid Padding="15,0"                                            
+                                      HeightRequest="60">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout VerticalOptions="CenterAndExpand" Spacing="-4">
+                                        <Label Text="{Binding Country}" TextColor="Black"
+                                               FontAttributes="Bold"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="16" />
+                                        <Label Text="{Binding City}" TextColor="Gray"
+                                               FontSize="18" />
+                                    </StackLayout>
+                                    <Label Grid.Column="1" Text="{Binding DateHour}" TextColor="Black"
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="End"
+                                           FontSize="16" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="3" Padding="25,0" BackgroundColor="#f6f6f6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Image Source="view_grid_outline" WidthRequest="17" VerticalOptions="CenterAndExpand" AbsoluteLayout.LayoutBounds="0.5,0.5,27,27"
+                               AbsoluteLayout.LayoutFlags="PositionProportional" />
+                        <BoxView BackgroundColor="Black" AbsoluteLayout.LayoutBounds="0.5,0.8,3,3"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional" />
+                    </AbsoluteLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" Spacing="0">
+                    <Image Source="bell_outline" WidthRequest="17" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="2" Spacing="0">
+                    <Image Source="tune" WidthRequest="17" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="3" Padding="9,0" Margin="0,-30,0,0">
+                    <Frame CornerRadius="23" Padding="0" HasShadow="True">
+                        <local1:GradientColorStack StartColor="#61cee5" EndColor="#5d86fc" Padding="0,15"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Image Source="plus" WidthRequest="27" VerticalOptions="CenterAndExpand" />
+                        </local1:GradientColorStack>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

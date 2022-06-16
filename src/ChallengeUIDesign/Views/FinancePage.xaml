@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="ChallengeUIDesign.Views.FinancePage">
+    <ContentPage.Content>
+        <cake:PancakeView BackgroundGradientStartColor="#414659"
+                          BackgroundGradientEndColor="#4a4d5a">
+
+            <CollectionView SelectionMode="None"
+                            x:Name="listViewCustom">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5,0">
+                            <cake:PancakeView CornerRadius="10"
+                                              Padding="20"
+                                              Margin="20,15"
+                                              BackgroundColor="#3d4254">
+                                <cake:PancakeView.Shadow>
+                                    <cake:DropShadow Color="#313447" Offset="0,0" />
+                                </cake:PancakeView.Shadow>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding Icon}" WidthRequest="35"
+                                           Margin="0,0,10,0"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center" />
+                                    <StackLayout Grid.Column="1" Spacing="8">
+                                        <Label Text="{Binding Name}" TextColor="White"
+                                               LineBreakMode="TailTruncation"
+                                               FontSize="18" />
+                                        <Label Text="{Binding Info}" TextColor="Gray"
+                                               FontSize="14" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="2" Spacing="8">
+                                        <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="EndAndExpand">
+                                            <Label Text="{Binding FirstPercent}"
+                                                   FontSize="20"
+                                                   TextColor="#c2a679"/>
+                                            <Label Text="{Binding SecondPercent}"
+                                                   IsVisible="{Binding IsSecondPercent}"
+                                                   TextColor="#c2a679"
+                                                   FontSize="14"
+                                                   HorizontalTextAlignment="End"
+                                                   VerticalTextAlignment="End"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Info2}"
+                                               TextColor="Gray"
+                                               HorizontalTextAlignment="End"
+                                               FontSize="14"/>
+                                    </StackLayout>
+
+                                </Grid>
+                            </cake:PancakeView>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                            Orientation="Vertical"
+                            VerticalItemSpacing="0"
+                            HorizontalItemSpacing="0"
+                            Span="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.Header>
+                    <Grid RowSpacing="30" Margin="0,0,0,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Spacing="0" Orientation="Horizontal" Margin="20,70,20,0">
+                            <StackLayout>
+                                <Label Text="Total revenue"
+                                       FontSize="16"
+                                       TextColor="Gray"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="5062.19" FontSize="26" TextColor="White" />
+                                    <Label Text="ↆ 0.06%" FontSize="16" TextColor="#c2a679"
+                                           VerticalOptions="EndAndExpand"/>
+                                </StackLayout> 
+                            </StackLayout>
+                            <Button Text="BUY" TextColor="Gray" CornerRadius="30" Padding="35,0"
+                                    BackgroundColor="#595c6c"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="EndAndExpand" />
+                        </StackLayout>
+
+                        <cake:PancakeView Grid.Row="1" Padding="0" CornerRadius="10" BackgroundColor="Transparent" Margin="20,0">
+                            <cake:PancakeView.Shadow>
+                                <cake:DropShadow Color="#000000" Offset="10,10" />
+                            </cake:PancakeView.Shadow>
+
+                            <AbsoluteLayout>
+                                <cake:PancakeView Padding="20,100"
+                                                  CornerRadius="10"
+                                                  BackgroundGradientStartColor="#80848f"
+                                                  BackgroundGradientEndColor="#4b5060"
+                                                  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                                  AbsoluteLayout.LayoutFlags="All">
+                                    
+                                </cake:PancakeView>
+                                
+                                <!-- Inner cards -->
+                                <cake:PancakeView BackgroundGradientStartColor="#5e6471"
+                                                  BackgroundGradientEndColor="#4c515f"
+                                                  OffsetAngle="270"
+                                                  CornerRadius="10"
+                                                  Rotation="45"
+                                    AbsoluteLayout.LayoutBounds="1.5,-1,0.7,0.7"
+                                          AbsoluteLayout.LayoutFlags="All">
+                                    <cake:PancakeView.Shadow>
+                                        <cake:DropShadow Color="#000000" Offset="30,30" />
+                                    </cake:PancakeView.Shadow>
+                                </cake:PancakeView>
+
+                                <cake:PancakeView BackgroundGradientStartColor="#5e6471"
+                                                  BackgroundGradientEndColor="#4c515f"
+                                                  OffsetAngle="90"
+                                                  Rotation="45"
+                                                  CornerRadius="10"
+                                    AbsoluteLayout.LayoutBounds="1.6,2.8,0.7,0.7"
+                                          AbsoluteLayout.LayoutFlags="All">
+                                    <cake:PancakeView.Shadow>
+                                        <cake:DropShadow Color="#000000" Offset="30,30" />
+                                    </cake:PancakeView.Shadow>
+                                </cake:PancakeView>
+
+                                <StackLayout AbsoluteLayout.LayoutBounds="0.15,0.5,AutoSize,AutoSize"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                                    <StackLayout Spacing="5" AbsoluteLayout.LayoutBounds="0,0"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                 VerticalOptions="Center" HorizontalOptions="Start">
+                                        <Label Text="The novice exclusive" TextColor="#b2b4c0"
+                                               FontSize="15"
+                                               VerticalTextAlignment="Center" 
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Text="10%ANNUAL EARNINGS" TextColor="White"
+                                               FontSize="18"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </AbsoluteLayout>
+                        </cake:PancakeView>
+
+                        <Grid Grid.Row="2" ColumnSpacing="30" Margin="20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="1" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Spacing="10">
+                                <Label Text="12.0%" FontSize="26" TextColor="#c2a679"
+                                       VerticalTextAlignment="Center"/>
+                                <Label Text="Expected Rate of Return" FontSize="14" TextColor="Gray"
+                                       VerticalTextAlignment="End"/>
+                            </StackLayout>
+                            <BoxView Grid.Column="1" BackgroundColor="#303346"
+                                     Margin="0,15"
+                                     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                            <StackLayout Grid.Column="2" Spacing="10">
+                                <StackLayout Spacing="1">
+                                    <Label Text="T+0 draw" FontSize="13"
+                                           TextColor="#c2a679"/>
+                                    <Label Text="No. 758 Phase A"
+                                           LineBreakMode="TailTruncation"
+                                           FontSize="18"
+                                           TextColor="White"/>
+                                </StackLayout>
+                                <Label Text="30day repayment"
+                                       FontSize="14"
+                                       TextColor="Gray"
+                                       VerticalTextAlignment="End"/>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </CollectionView.Header>
+            </CollectionView>
+        </cake:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

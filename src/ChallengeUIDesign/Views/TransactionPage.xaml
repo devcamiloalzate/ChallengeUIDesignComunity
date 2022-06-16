@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:cake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             x:Class="ChallengeUIDesign.Views.TransactionPage">
+    <ContentPage.Content>
+        <cake:PancakeView BackgroundGradientStartColor="#333364"
+                          BackgroundGradientEndColor="#222537"
+                          OffsetAngle="150">
+            <AbsoluteLayout>
+                <cake:PancakeView Rotation="45"
+                                  CornerRadius="80"
+                                  AbsoluteLayout.LayoutBounds="-4.5,-0.3,350,350"
+                                  AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <cake:PancakeView.BackgroundGradientStops>
+                        <cake:GradientStopCollection>
+                            <cake:GradientStop Color="#f790a2" Offset="0" />
+                            <cake:GradientStop Color="#f347bd" Offset="1" />
+                        </cake:GradientStopCollection>
+                    </cake:PancakeView.BackgroundGradientStops>
+                </cake:PancakeView>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Spacing="15" Margin="25,60,90,0"
+                                 AbsoluteLayout.LayoutBounds="-4.5,-0.3,350,350"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <Label Text="Classify transaction" FontSize="24" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Classify this transaction into a particular category" FontSize="15" TextColor="White" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Padding="20,0">
+                        <CollectionView Grid.Row="1" Margin="0,20,0,0" x:Name="collectionViewCustom">
+                            <!--<CollectionView.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Baboon</x:String>
+                                    <x:String>Capuchin Monkey</x:String>
+                                    <x:String>Blue Monkey</x:String>
+                                    <x:String>Squirrel Monkey</x:String>
+                                    <x:String>Golden Lion Tamarin</x:String>
+                                    <x:String>Howler Monkey</x:String>
+                                </x:Array>
+                            </CollectionView.ItemsSource>-->
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical"
+                                             Span="2"
+                                             VerticalItemSpacing="20"
+                                             HorizontalItemSpacing="20" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <AbsoluteLayout>
+                                        <cake:PancakeView CornerRadius="20"
+                                                          BackgroundColor="#3c3f6b"
+                                                          Opacity="0.7"
+                                                          OffsetAngle="0"
+                                                          Padding="30,30"
+                                                          AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                                          AbsoluteLayout.LayoutFlags="All">
+                                        </cake:PancakeView>
+                                        <cake:PancakeView CornerRadius="20"
+                                                          Padding="30,30"
+                                                          AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                                          AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                          VerticalOptions="Center" HorizontalOptions="Center">
+                                            <StackLayout Spacing="30">
+                                                <cake:PancakeView BackgroundGradientStartColor="{Binding StartColor}"
+                                                      BackgroundGradientEndColor="{Binding EndColor}"
+                                                      CornerRadius="80"
+                                                      OffsetAngle="250"
+                                                      VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Image Source="{Binding Icon}" WidthRequest="35" 
+                                                           Margin="20"
+                                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                                </cake:PancakeView>
+                                                <Label Text="{Binding Name}" TextColor="{Binding TextColor}" 
+                                                       FontSize="15" FontAttributes="Bold" 
+                                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                            </StackLayout>
+                                        </cake:PancakeView>
+                                    </AbsoluteLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+
+
+                    <Grid Grid.Row="2" Padding="40,0" BackgroundColor="#353653">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Spacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+                            <Image Source="calendar_heart" WidthRequest="25" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" Spacing="0">
+                            <Image Source="chart_bar" WidthRequest="25" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2" Spacing="0" HorizontalOptions="EndAndExpand">
+                            <Image Source="account" WidthRequest="25" VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </Grid>
+
+                </Grid>
+                
+            </AbsoluteLayout>
+        </cake:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

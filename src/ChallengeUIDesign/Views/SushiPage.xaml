@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontIconHelper="clr-namespace:ChallengeUIDesign.Helpers"
+             x:Class="ChallengeUIDesign.Views.SushiPage">
+    <Grid RowDefinitions="Auto,*">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#495062"
+                          Offset="0.1" />
+                <GradientStop Color="#212430"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid ColumnDefinitions="*,*" Padding="20,35,20,5">
+            <Label Grid.Column="0" 
+                   Text="{x:Static fontIconHelper:FontMaterialIcons.ChevronLeft}" TextColor="White"
+                   FontFamily="{StaticResource IconFont}"
+                   FontSize="34"
+                   VerticalTextAlignment="Center" />
+            <Label Grid.Column="1"
+                   Text="{x:Static fontIconHelper:FontMaterialIcons.HeartOutline}" TextColor="White"
+                   FontFamily="{StaticResource IconFont}"
+                   FontSize="24" 
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="End" />
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="Auto,30,*,Auto,Auto,Auto" RowSpacing="25" Padding="0,0,0,0">
+                <StackLayout Grid.Row="0" Spacing="0">
+                    <Label Text="Maki Salmon" TextColor="White"
+                           FontSize="Large"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Salmon Category" TextColor="#f1980c"
+                           FontSize="Small"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1"
+                             Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Spacing="20">
+                    <Frame BackgroundColor="#f1980c"
+                           Padding="15,0"
+                           CornerRadius="50"
+                           BorderColor="#f1980c">
+                        <Label Text="6 units" TextColor="White"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Frame>
+                    <Frame BackgroundColor="Transparent"
+                           Padding="15,0"
+                           CornerRadius="50"
+                           BorderColor="#ffffff">
+                        <Label Text="12 units" TextColor="White"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Frame>
+                    <Frame BackgroundColor="Transparent"
+                           Padding="15,0"
+                           CornerRadius="50"
+                           BorderColor="#ffffff">
+                        <Label Text="24 units" TextColor="White"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Frame>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Padding="25,0">
+                    <StackLayout>
+                        <Image Source="makisalmon"
+                               WidthRequest="175" />
+                        <Frame Padding="0" CornerRadius="5"
+                               Opacity=".5"
+                               BackgroundColor="#262c3c">
+                            <Grid ColumnDefinitions="*,Auto,*,Auto,*"
+                                  ColumnSpacing="5"
+                                  Margin="10">
+                                <StackLayout Grid.Column="0" Spacing="0">
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.Fish}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="24"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                    <Label Text="SALMON" TextColor="White"
+                                           FontSize="Micro"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Spacing="-8" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="2" Spacing="0">
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.Waves}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="24"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                    <Label Text="RED CAVIAR" TextColor="White"
+                                           FontSize="Micro"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                                <StackLayout Grid.Column="3" Spacing="-8" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.CircleSmall}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="16"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                                <StackLayout Grid.Column="4" Spacing="0">
+                                    <Label Text="{x:Static fontIconHelper:FontMaterialIcons.Rice}" TextColor="White"
+                                           FontFamily="{StaticResource IconFont}"
+                                           FontSize="24"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                    <Label Text="WHITE RICE" TextColor="White"
+                                           FontSize="Micro"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+                <Grid Grid.Row="3" ColumnDefinitions="*,2*" 
+                      ColumnSpacing="20"
+                      Margin="25,0">
+                    <StackLayout Grid.Column="0"
+                                 Spacing="2"
+                                 Orientation="Horizontal">
+                        <Label Text="$24" 
+                               TextColor="White"
+                               FontSize="36"
+                               VerticalTextAlignment="Start"/>
+                        <Label TextColor="White" 
+                               Text=".99"
+                               VerticalTextAlignment="Start"
+                               Margin="0,5,0,0"
+                               FontSize="20"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Spacing="0">
+                        <Label Text="VALUATIONS"
+                               TextColor="#e3e3e3"
+                               Margin="0,6,0,0"
+                               FontSize="12"/>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="4.5" TextColor="#ffffff" FontSize="17" />
+                            <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="4">
+                                <Label Grid.Column="0"
+                                       TextColor="#f0b026"
+                                       FontSize="18"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource IconFont}"
+                                       Text="{x:Static fontIconHelper:FontMaterialIcons.Star}" />
+                                <Label Grid.Column="1"
+                                       TextColor="#f0b026"
+                                       FontSize="18"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource IconFont}"
+                                       Text="{x:Static fontIconHelper:FontMaterialIcons.Star}" />
+                                <Label Grid.Column="2"
+                                       TextColor="#f0b026"
+                                       FontSize="18"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource IconFont}"
+                                       Text="{x:Static fontIconHelper:FontMaterialIcons.Star}" />
+                                <Label Grid.Column="3"
+                                       TextColor="#f0b026"
+                                       FontSize="18"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource IconFont}"
+                                       Text="{x:Static fontIconHelper:FontMaterialIcons.Star}" />
+                                <Label Grid.Column="4"
+                                       TextColor="#64697c"
+                                       FontSize="18"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource IconFont}"
+                                       Text="{x:Static fontIconHelper:FontMaterialIcons.Star}" />
+                            </Grid>
+                            <Label Text="(45)" TextColor="#ffffff" FontSize="12" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <Frame Grid.Row="4" 
+                       Padding="0" 
+                       CornerRadius="5"
+                       Margin="25,0"
+                       BackgroundColor="#1e222e">
+                    <Grid ColumnDefinitions="Auto,*"
+                          ColumnSpacing="20"
+                          Margin="10">
+                        <Frame BackgroundColor="#545a6b" CornerRadius="10" WidthRequest="50">
+                            <Label Text="{x:Static fontIconHelper:FontMaterialIcons.MapMarker}" 
+                                   TextColor="White"
+                                   FontFamily="{StaticResource IconFont}"
+                                   FontSize="24"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" />
+                        </Frame>
+                        <StackLayout Grid.Column="1" Spacing="3" 
+                                     VerticalOptions="CenterAndExpand">
+                            <Label Text="DELIVERY" TextColor="#e3e3e3" FontSize="12" />
+                            <Label TextColor="White" Text="Omaha, NE 68131, EE. UU" FontSize="14" />
+                            <Label TextColor="#f1980c" Text="12:32 pm to 1:20 pm" FontSize="14" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Button Grid.Row="5"
+                        CornerRadius="50"
+                        HeightRequest="60"
+                        Margin="30,20"
+                        BackgroundColor="Transparent"
+                        BorderColor="#ebbb54"
+                        BorderWidth="3"
+                        TextColor="White"
+                        Text="Make order now"/>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>
